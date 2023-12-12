@@ -1,5 +1,6 @@
 return {
   "tpope/vim-fugitive",
+  event = "VeryLazy",
   keys = {
     { "<leader>gf", ":Git fetch --all -p<cr>", desc = "Git fetch" },
     { "<leader>gp", ":Git pull<cr>", desc = "Git pull" },
