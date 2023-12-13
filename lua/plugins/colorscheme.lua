@@ -1,8 +1,9 @@
 return {
-	"wuelnerdotexe/vim-enfocado",
-	lazy = false,
-        priority = 1000,
-        config = function()
-      	  vim.cmd.colorscheme "enfocado"
-        end,
+  "catppuccin/nvim",
+  lazy = false,
+  priority = 1000,
+  name = "catppuccin",
+  config = function()
+    vim.cmd.colorscheme "catppuccin-mocha"
+  end,
 }
