@@ -74,7 +74,9 @@ function M.setup()
   require('lspconfig')['lua_ls'].setup {
     capabilities = capabilities
   }
-
+  require('lspconfig')['tsserver'].setup {
+    capabilities = capabilities
+  }
 end
 
 return M

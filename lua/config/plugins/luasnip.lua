@@ -5,6 +5,7 @@ local M = {}
 
 function M.setup()
   ls.config.set_config {
+
     history = true,
     updateevents = "TextChanged,TextChangedI",
     enable_autosnippets = true,
