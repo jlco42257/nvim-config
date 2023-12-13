@@ -10,6 +10,9 @@ return {
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
     vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
+    vim.keymap.set('n', '<space>f', function(_, bufnr)
+      vim.lsp.buf.format { async = true, buffer = bufnr }
+    end)
 
     local on_attach = function(_, bufnr)
       vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
@@ -28,8 +31,8 @@ return {
       vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
       vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
       vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-      vim.keymap.set({"i", "v", "n"}, '<c-p>', function()
-        vim.lsp.buf.format { async = true }
+      vim.keymap.set('n', '<space>f', function()
+        vim.lsp.buf.format { async = true, opts }
       end, opts)
     end
 
@@ -45,7 +48,7 @@ return {
     })
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
-    require'lspconfig'.html.setup {
+    require 'lspconfig'.html.setup {
       capabilities = capabilities,
       on_attach = on_attach,
     }
