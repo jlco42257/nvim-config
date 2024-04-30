@@ -1,8 +1,10 @@
 return {
   'nvim-lualine/lualine.nvim',
+  event = "VeryLazy",
   dependencies = {
-    'nvim-tree/nvim-web-devicons',
-    opt = true,
+    {'nvim-tree/nvim-web-devicons',
+    opt = true},
+    {'kdheepak/tabline.nvim', opt = true},
   },
   config = {
     options = {
@@ -39,7 +41,14 @@ return {
       lualine_y = {},
       lualine_z = {}
     },
-    tabline = {},
+    tabline = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {'buffers'},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {},
+    },
     winbar = {},
     inactive_winbar = {},
     extensions = {}

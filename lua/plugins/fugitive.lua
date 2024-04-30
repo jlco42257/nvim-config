@@ -2,10 +2,10 @@ return {
   "tpope/vim-fugitive",
   event = "VeryLazy",
   keys = {
-    { "<leader>gf", ":Git fetch --all -p<cr>", desc = "Git fetch" },
+    { "<leader>gi", ":Git init<cr>", desc = "Git init" },
     { "<leader>gp", ":Git pull<cr>", desc = "Git pull" },
-    { "<leader>gdl", ":diffget //2<cr>", desc = "Git diff grab from left" },
-    { "<leader>gdr", ":diffget //3<cr>", desc = "Git diff grab from right" },
+    { "<leader>ga", ":Git add .<cr>", desc = "Git add all" },
+    { "<leader>gc", ":Git commit<cr>", desc = "Git commit" },
   },
   cmd = { "G", "Git" },
 }
