@@ -7,6 +7,11 @@ local M = {}
 
 function M.setup()
   cmp.setup({
+    window = {
+      completion = {
+        border = "rounded",
+      },
+    },
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)

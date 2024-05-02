@@ -45,13 +45,6 @@ return {
       desc = "Telescope Git status",
     },
     {
-      "<leader>gc",
-      function ()
-        require("telescope.builtin").git_bcommits()
-      end,
-      desc = "Telescope Git buffers commit",
-    },
-    {
       "<leader>gb",
       function ()
         require("telescope.builtin").git_branches()
